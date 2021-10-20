@@ -1,0 +1,32 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      ring:
+        description: 'Identifier for the target deployment ring'
+        default: 'ring-0'
+        required: false
+        type: string
+      environment:
+        required: false
+        type: string
+    secrets:
+      token:
+        required: false
+
+jobs:
+  example_job:
+    name: print_test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo ${{ inputs.ring }}
+          
+# caller example
+# call-workflow-passing-data:
+#  uses: .github/workflows/resuable_workflow.yml@main
+#  with:
+#    username: mona
+#  secrets:
+#    token: ${{ secrets.TOKEN }}
