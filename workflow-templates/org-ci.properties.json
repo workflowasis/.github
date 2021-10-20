@@ -1,9 +1,9 @@
 {
-    "name": "rganization Workflow",
+    "name": "Organization Workflow",
     "description": "Organization CI workflow template.",
     "iconName": "example-icon",
     "categories": [
-        "Go"
+        "NodeJS"
     ],
     "filePatterns": [
         "package.json$",
